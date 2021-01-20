@@ -13,5 +13,38 @@ describe("FizzBuzz.service", () => {
         expect(typeof result).toEqual("number");
       }
     );
+
+    test.each([3, 27, 123])(
+      "Value (%p) divisible by 3 should return 'Fizz'",
+      (value) => {
+        // Act
+        const result = fizzOrBuzz(value);
+
+        // Assert
+        expect(result).toEqual(`${value} - Fizz!`);
+      }
+    );
+
+    test.each([5, 25, 130])(
+      "Value (%p) divisible by 5 should return 'Buzz'",
+      (value) => {
+        // Act
+        const result = fizzOrBuzz(value);
+
+        // Assert
+        expect(result).toEqual(`${value} - Buzz!`);
+      }
+    );
+
+    test.each([0, 15, 120])(
+      "Value (%p) divisible by 3 and 5 should return 'FizzBuzz'",
+      (value) => {
+        // Act
+        const result = fizzOrBuzz(value);
+
+        // Assert
+        expect(result).toEqual(`${value} - FizzBuzz!`);
+      }
+    );
   });
 });
