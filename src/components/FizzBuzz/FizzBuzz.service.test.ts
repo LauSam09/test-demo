@@ -1,7 +1,7 @@
 import { fizzOrBuzz } from "./FizzBuzz.service";
 
 describe("FizzBuzz.service", () => {
-  describe("fizzOrBuz", () => {
+  describe("fizzOrBuzz", () => {
     test("should handle negative numbers", () => {
       // Act
       const result = fizzOrBuzz(-13);
