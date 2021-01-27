@@ -2,7 +2,9 @@
 
 exports[`<FizzBuzz /> should match snapshot 1`] = `
 Array [
-  <span />,
+  <span>
+    0
+  </span>,
   <button
     onClick={[Function]}
   >

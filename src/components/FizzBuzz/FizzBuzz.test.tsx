@@ -8,6 +8,10 @@ import { fizzOrBuzz } from "./FizzBuzz.service";
 jest.mock("./FizzBuzz.service");
 
 describe("<FizzBuzz />", () => {
+  beforeEach(() => {
+    (fizzOrBuzz as jest.Mock).mockImplementation((number: number) => number);
+  });
+
   test("should match snapshot", () => {
     // Act
     const tree = renderer.create(<FizzBuzz />);
@@ -18,7 +22,6 @@ describe("<FizzBuzz />", () => {
 
   test("should increment number when button is clicked", () => {
     // Arrange
-    (fizzOrBuzz as jest.Mock).mockImplementation((number: number) => number);
     const { getByText, queryByText } = render(<FizzBuzz />);
     const button = getByText("Click me");
 
