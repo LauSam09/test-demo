@@ -2,6 +2,22 @@ import { fizzOrBuzz } from "./FizzBuzz.service";
 
 describe("FizzBuzz.service", () => {
   describe("fizzOrBuz", () => {
+    test("should handle negative numbers", () => {
+      // Act
+      const result = fizzOrBuzz(-13);
+
+      // Assert
+      expect(result).toEqual(-13);
+    });
+
+    test("should handle NaN", () => {
+      // Act
+      const result = fizzOrBuzz(NaN);
+
+      // Assert
+      expect(result).toEqual(NaN);
+    });
+
     test.each([1, 7, 41, 124])(
       "Non-divisible value %p should be returned",
       (value) => {
